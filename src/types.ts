@@ -1,4 +1,4 @@
-import ApolloClient from 'apollo-client';
+import { ApolloClient } from '@apollo/client';
 import { IncomingHttpHeaders } from 'http';
 import { NextPage, NextPageContext } from 'next';
 import { AppContext } from 'next/app';
@@ -10,7 +10,6 @@ export interface WithApolloOptions {
     context?: { [key: string]: any }
   ) => Promise<any>;
   render?: (props: { Page: NextPage<any>; props: any }) => any;
-  onError?: (error: Error, ctx?: NextPageContext) => void;
 }
 
 export interface WithApolloState<TCache> {

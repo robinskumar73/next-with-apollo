@@ -32,7 +32,6 @@ export default function withApollo<TCache = any>(
         ? pageOptions.getDataFromTree
         : options.getDataFromTree;
     const render = pageOptions.render || options.render;
-    const onError = pageOptions.onError || options.onError;
 
     function WithApollo({ apollo, apolloState, ...props }: ApolloProps) {
       const apolloClient =
@@ -79,17 +78,13 @@ export default function withApollo<TCache = any>(
 
               await getDataFromTree(<AppTree {...appTreeProps} />);
             } catch (error) {
-              if (onError) {
-                onError(error, ctx);
-              } else {
-                // Prevent Apollo Client GraphQL errors from crashing SSR.
-                if (process.env.NODE_ENV !== 'production') {
-                  // tslint:disable-next-line no-console This is a necessary debugging log
-                  console.error(
-                    'GraphQL error occurred [getDataFromTree]',
-                    error
-                  );
-                }
+              // Prevent Apollo Client GraphQL errors from crashing SSR.
+              if (process.env.NODE_ENV !== 'production') {
+                // tslint:disable-next-line no-console This is a necessary debugging log
+                console.error(
+                  'GraphQL error occurred [getDataFromTree]',
+                  error
+                );
               }
             }
 

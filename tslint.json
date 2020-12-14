@@ -1,13 +1,7 @@
 {
   "defaultSeverity": "error",
-  "extends": [
-    "tslint:latest",
-    "tslint-eslint-rules",
-    "tslint-config-prettier"
-  ],
-  "rulesDirectory": [
-    "tslint-plugin-prettier"
-  ],
+  "extends": ["tslint:latest", "tslint-eslint-rules", "tslint-config-prettier"],
+  "rulesDirectory": ["tslint-plugin-prettier"],
   "rules": {
     "prettier": [
       true,
@@ -15,10 +9,7 @@
         "singleQuote": true
       }
     ],
-    "curly": [
-      true,
-      "ignore-same-line"
-    ],
+    "curly": [true, "ignore-same-line"],
     "variable-name": [
       true,
       "ban-keywords",
@@ -26,10 +17,7 @@
       "allow-leading-underscore",
       "allow-pascal-case"
     ],
-    "interface-name": [
-      true,
-      "never-prefix"
-    ],
+    "interface-name": [true, "never-prefix"],
     "array-type": false,
     "object-literal-sort-keys": false,
     "no-implicit-dependencies": false,

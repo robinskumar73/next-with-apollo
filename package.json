@@ -1,5 +1,5 @@
 {
-  "name": "@robinskumar73/next-with-apollo",
+  "name": "snaphy-next-with-apollo",
   "version": "6.0.0",
   "description": "Apollo HOC for Next.js",
   "main": "lib/index.js",
